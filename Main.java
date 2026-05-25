@@ -1,12 +1,5 @@
 import java.util.*;
 
-/**
- * Vertex Cover Problem - Solucao por Algoritmos Gulosos
- *
- * Compilar : javac *.java
- * Executar : java Main
- * Exemplo  : java Main < exemplo_entrada.txt
- */
 public class Main {
 
     private static final String DIV  = "=".repeat(65);
@@ -35,9 +28,6 @@ public class Main {
         sc.close();
     }
 
-    // -------------------------------------------------------------------------
-    // Leitura de entrada com validacao
-    // -------------------------------------------------------------------------
     private static Graph readGraph(Scanner sc) {
         System.out.println("\n  ENTRADA DO GRAFO");
         System.out.println(SDIV);
@@ -83,9 +73,6 @@ public class Main {
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Exibicao do grafo
-    // -------------------------------------------------------------------------
     private static void printGraphInfo(Graph g) {
         System.out.printf("%n  |V| = %d vertices   |E| = %d arestas%n%n", g.getV(), g.getE());
         System.out.print(g.toAdjListString());
@@ -107,9 +94,6 @@ public class Main {
         System.out.println(degs.toString().stripTrailing());
     }
 
-    // -------------------------------------------------------------------------
-    // Exibicao de resultado de um algoritmo
-    // -------------------------------------------------------------------------
     private static void printResult(Graph graph, AlgorithmResult r, int num) {
         System.out.println("\n" + DIV);
         System.out.printf("  ALGORITMO %d: %s%n", num, r.name);
@@ -138,9 +122,6 @@ public class Main {
         System.out.printf("  Tempo de execucao     : %s%n", formatTime(r.timeNanos));
     }
 
-    // -------------------------------------------------------------------------
-    // Comparacao entre os dois algoritmos
-    // -------------------------------------------------------------------------
     private static void printComparison(AlgorithmResult r1, AlgorithmResult r2) {
         System.out.println("\n" + DIV);
         System.out.println("  COMPARACAO DOS ALGORITMOS");
@@ -165,9 +146,6 @@ public class Main {
              "Empate"));
     }
 
-    // -------------------------------------------------------------------------
-    // Analise de complexidade teorica
-    // -------------------------------------------------------------------------
     private static void printComplexityAnalysis(Graph graph, AlgorithmResult r1, AlgorithmResult r2) {
         int V = graph.getV(), E = graph.getE();
         System.out.println("\n" + DIV);
@@ -218,9 +196,6 @@ public class Main {
         System.out.println("    mas impraticavel para k grande.");
     }
 
-    // -------------------------------------------------------------------------
-    // Utilitarios
-    // -------------------------------------------------------------------------
     private static void printBanner() {
         System.out.println("\n" + DIV);
         System.out.println("      VERTEX COVER PROBLEM - Algoritmos Gulosos em Java");
